@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 6 - Gabungan Praktik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            gap: 2rem;
+        }
+
+        /* Practice Sections */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .section-badge {
+            font-size: 0.8rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Data Rows */
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            color: var(--text-secondary);
+        }
+
+        .data-value {
+            font-family: 'Fira Code', monospace;
+            color: var(--success);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Buttons & Interactions */
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-right: 0.5rem;
+        }
+
+        button:hover {
+            background: var(--accent-hover);
+        }
+
+        #dom-p {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Latihan Praktik</h1>
+    <div class="container">
+
+        <!-- 1. Volume Kubus -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">1. Volume Kubus</div>
+                <div class="section-badge">Function</div>
+            </div>
+            <div id="volume-result"></div>
+        </div>
+
+        <!-- 2. Array Angkot -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">2. Juragan Angkot</div>
+                <div class="section-badge">Array Logic</div>
+            </div>
+            <div id="array-result"></div>
+        </div>
+
+        <!-- 3. DOM Manipulation -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">3. DOM Manipulation</div>
+                <div class="section-badge">Events</div>
+            </div>
+            <h2 id="dom-judul" style="margin:0 0 1rem 0; font-size: 1.5rem;">Hello World!</h2>
+            <p id="dom-p">Paragraf 1 (Klik tombol untuk ubah merah)</p>
+            <div style="margin-top:1rem;">
+                <button type="button" id="btn-ubah-color">Ubah Warna P</button>
+                <button type="button" id="btn-ubah-text" style="background:var(--success)">Ubah Judul</button>
+            </div>
+        </div>
+
+        <!-- 4. Arrow Function -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">4. Arrow Function</div>
+                <div class="section-badge">ES6</div>
+            </div>
+            <div id="arrow-result"></div>
+        </div>
+
+        <!-- 5. Filter -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">5. Array Filter</div>
+                <div class="section-badge">ES6</div>
+            </div>
+            <div id="filter-result"></div>
+        </div>
+
+        <!-- 6. Map -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">6. Array Map</div>
+                <div class="section-badge">ES6</div>
+            </div>
+            <div id="map-result"></div>
+        </div>
+
+        <!-- 7. Reduce -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">7. Array Reduce</div>
+                <div class="section-badge">ES6</div>
+            </div>
+            <div id="reduce-result"></div>
+        </div>
+
+        <!-- 8. Destructuring -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-title">8. Destructuring</div>
+                <div class="section-badge">ES6</div>
+            </div>
+            <div id="destructuring-result"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Praktikum Web - All Modules Combined
+    </footer>
+
+    <script src="function.js"></script>
+</body>
+
+</html>

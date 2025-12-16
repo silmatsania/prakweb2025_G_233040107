@@ -10,6 +10,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     // Kolom yang dilindungi dari mass assignment (hanya 'id' yang tidak boleh diisi manual)
     protected $guarded = ['id'];
 
