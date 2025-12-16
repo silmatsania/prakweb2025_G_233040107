@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard | Pertemuan 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <!-- Main Center Content -->
+        <main class="dashboard-center">
+            <h1 id="time" class="time-display">00:00</h1>
+            <h2 id="greeting" class="greeting-display">Good Morning, User.</h2>
+
+            <div class="focus-section">
+                <p>What is your main focus for today?</p>
+                <input type="text" id="focus-input" placeholder="Type here..." autocomplete="off">
+                <div id="focus-display" class="hidden">
+                    <span class="checkbox-box"></span>
+                    <span id="focus-text">Reading Book</span>
+                    <button id="delete-focus">×</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Quote at bottom -->
+        <footer class="quote-section">
+            <p>"The only way to do great work is to love what you do."</p>
+            <span class="author">- Steve Jobs</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
